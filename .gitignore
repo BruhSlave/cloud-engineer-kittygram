@@ -1,3 +1,4 @@
 
 .DS_Store
 authorized_key.json
+infra/auth_data.sh
