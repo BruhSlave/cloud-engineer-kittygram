@@ -44,12 +44,43 @@ variable "folder_id" {
   type        = string
 }
 
-variable "access_key" {
-  description = "Access Key for Bucket"
+variable "image_family" {
+  description = "OS image family"
   type        = string
+  default     = "ubuntu-2204-lts"
 }
 
-variable "secret_key" {
-  description = "Secret Key for Bucket"
-  type        = string
+variable "zone" {
+  type    = string
+  default = "ru-central1-a"
+}
+
+variable "platform_id" {
+  type    = string
+  default = "standard-v2"
+}
+
+variable "cores" {
+  type    = number
+  default = 2
+}
+
+variable "memory" {
+  type    = number
+  default = 2
+}
+
+variable "disk_type" {
+  type    = string
+  default = "network-hdd"
+}
+
+variable "disk_size" {
+  type    = number
+  default = 20
+}
+
+variable "nat" {
+  type    = bool
+  default = true
 }
