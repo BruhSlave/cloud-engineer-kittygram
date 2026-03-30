@@ -23,4 +23,6 @@ write_files:
 runcmd:
   - sleep 120
   - sudo -i
+  - mkdir -p /kittygram
+  - chown user:user /kittygram
   - /root/vm_prep.sh
