@@ -1,4 +1,4 @@
-name: Terraform
+name: Terraform Up
 
 on:
   workflow_dispatch:
@@ -43,7 +43,7 @@ jobs:
           cat > terraform.tfvars << EOF
           cloud_id = "${{ secrets.YC_CLOUD_ID }}"
           folder_id = "${{ secrets.YC_FOLDER_ID }}"
-          ssh_key = "${{ secrets.SSH_KEY }}" # Добавить SSH ключ в credentials
+          ssh_key = "${{ secrets.TERRAFORM_SSH_KEY }}"
           EOF
 
       - name: Terraform Plan
