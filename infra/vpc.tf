@@ -31,11 +31,3 @@ resource "yandex_vpc_security_group" "infra_sg" {
     v4_cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
-resource "yandex_vpc_address" "static_ip" {
-  name = "vm_static_ip"
-
-  external_ipv4_address {
-    zone_id = var.zone
-  }
-}
