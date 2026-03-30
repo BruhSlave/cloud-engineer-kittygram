@@ -46,6 +46,7 @@ jobs:
           cloud_id = "${{ secrets.YC_CLOUD_ID }}"
           folder_id = "${{ secrets.YC_FOLDER_ID }}"
           ssh_key = "${{ secrets.TERRAFORM_SSH_KEY }}"
+          static_ip = "${{ secrets.TERRAFORM_STATIC_IP"
           EOF
 
       - name: Terraform Plan
