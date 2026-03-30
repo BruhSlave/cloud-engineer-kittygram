@@ -85,3 +85,7 @@ variable "nat" {
   type    = bool
   default = true
 }
+
+variable "static_ip" {
+  type = string
+}
