@@ -3,5 +3,4 @@ authorized_key.json
 .terraform.lock.hcl
 .terraform/
 auth_data.sh
-init/
 terraform.tfvars
