@@ -93,6 +93,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Create directory on server
+        uses: appleboy/ssh-action@v0.1.9
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            sudo mkdir -p /kittygram
+            sudo chown $USER:$USER /kittygram
+
       - name: Copy compose file
         uses: appleboy/scp-action@v0.1.4
         with:
