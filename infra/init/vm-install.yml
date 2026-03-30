@@ -1,0 +1,26 @@
+#cloud-config
+ssh_pwauth: no
+users:
+  - name: user
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - "${SSH_KEY}"
+write_files:
+  - content: |
+      #!/bin/bash
+      apt-get update
+      apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+      curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+      add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+      apt-get update
+      apt-get install -y docker-ce
+      curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      chmod +x /usr/local/bin/docker-compose
+      usermod -aG docker user
+    path: /root/vm_prep.sh
+    permissions: "0740"
+runcmd:
+  - sleep 120
+  - sudo -i
+  - /root/vm_prep.sh
