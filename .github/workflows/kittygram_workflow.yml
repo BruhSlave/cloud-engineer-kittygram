@@ -156,15 +156,10 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ────────────────
-            Деплой выполнен
-            ────────────────
-
             Автор: ${{ github.actor }}
             Ветка: `${{ github.ref_name }}`
             Репозиторий: ${{ github.repository }}
             Коммит: ${{ github.event.commits[0].message }}
-
-            ────────────────
+            ----------------
             Успешно
-            ────────────────
+            
