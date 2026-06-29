@@ -4,3 +4,8 @@ authorized_key.json
 .terraform/
 auth_data.sh
 terraform.tfvars
+.env
+backend_media/
+ci_deploy_key
+ci_deploy_key.pub
+frontend/.env
